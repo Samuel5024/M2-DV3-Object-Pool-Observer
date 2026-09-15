@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Object Pool _ Observer.sln"
+    "dotnet.defaultSolution": "Object Pool and Observer.sln"
 }
