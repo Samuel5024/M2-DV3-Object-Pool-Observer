@@ -1,16 +1,26 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class Subject : MonoBehaviour
+public abstract class Subject : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private readonly ArrayList _observers = new ArrayList();
+    
+    public void Attach(Observer observer)
     {
-        
+        _observers.Add(observer);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Detach(Observer observer)
     {
-        
+        _observers.Remove(observer);
+    }
+
+    public void NotifyObservers()
+    {
+        foreach(Observer observer in _observers)
+        {
+            observer.Notify(this);
+        }
     }
 }
