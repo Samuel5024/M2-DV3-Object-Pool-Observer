@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class ClientObjectPool : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private DroneObjectPool _pool;
+
     void Start()
     {
-        
+        _pool = gameObject.AddComponent<DroneObjectPool>();    
     }
 
-    // Update is called once per frame
-    void Update()
+    // void Update()
+    // {
+    //     _pool.Spawn();
+    // }
+
+    void OnGUI()
     {
-        
+        if(GUILayout.Button("Spawn Drones"))
+        {
+            _pool.Spawn();
+        }
     }
 }
