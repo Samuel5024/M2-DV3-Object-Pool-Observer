@@ -59,9 +59,6 @@ public class BikeController : Subject
         {
             Detach(_cameraController);
         }
-        {
-            
-        }
     }
 
     private void StartEngine()
